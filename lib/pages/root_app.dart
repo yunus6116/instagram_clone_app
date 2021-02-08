@@ -126,12 +126,8 @@ class _RootAppState extends State<RootApp> {
       pageIndex == 1
           ? "assets/images/search_active_icon.svg"
           : "assets/images/search_icon.svg",
-      pageIndex == 2
-          ? "assets/images/instagram-reels-dark.svg"
-          : "assets/images/instagram-reels-dark.svg",
-      pageIndex == 3
-          ? "assets/images/love_active_icon.svg"
-          : "assets/images/love_icon.svg",
+      "",
+      "",
       pageIndex == 4
           ? "assets/images/account_active_icon.svg"
           : "assets/images/account_icon.svg",

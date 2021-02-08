@@ -185,7 +185,9 @@ class PostItem extends StatelessWidget {
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                                image: NetworkImage(profileImg),
+                                image: NetworkImage(
+                                  "https://media-exp1.licdn.com/dms/image/C4D03AQFQSFA3m8xLfQ/profile-displayphoto-shrink_800_800/0/1583423625748?e=1618444800&v=beta&t=tFLAmnv8fGQbo1rnc4yeBzBawFeWVEso1GytTjqZFIQ",
+                                ),
                                 fit: BoxFit.cover)),
                       ),
                       SizedBox(
