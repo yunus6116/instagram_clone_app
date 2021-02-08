@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                 isLoved: posts[index]['isLoved'],
                 viewCount: posts[index]['commentCount'],
                 likedBy: posts[index]['likedBy'],
-                dayAgo: posts[index]['dayAgo'],
+                timeAgo: posts[index]['timeAgo'],
               );
             }),
           )

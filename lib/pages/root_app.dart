@@ -67,13 +67,26 @@ class _RootAppState extends State<RootApp> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            SvgPicture.asset(
-              "assets/images/camera_icon.svg",
-              width: 30,
-            ),
             Text(
               "Instagram",
               style: TextStyle(fontFamily: 'Billabong', fontSize: 35),
+            ),
+            Expanded(
+              child: Container(),
+            ),
+            SvgPicture.asset(
+              "assets/images/upload_icon.svg",
+              width: 30,
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            SvgPicture.asset(
+              "assets/images/love_icon.svg",
+              width: 30,
+            ),
+            SizedBox(
+              width: 20,
             ),
             SvgPicture.asset(
               "assets/images/message_icon.svg",
@@ -83,7 +96,10 @@ class _RootAppState extends State<RootApp> {
         ),
       );
     } else if (pageIndex == 1) {
-      return null;
+      return AppBar(
+        backgroundColor: appBarColor,
+        title: Text("Search"),
+      );
     } else if (pageIndex == 2) {
       return AppBar(
         backgroundColor: appBarColor,
@@ -111,8 +127,8 @@ class _RootAppState extends State<RootApp> {
           ? "assets/images/search_active_icon.svg"
           : "assets/images/search_icon.svg",
       pageIndex == 2
-          ? "assets/images/upload_active_icon.svg"
-          : "assets/images/upload_icon.svg",
+          ? "assets/images/instagram-reels-dark.svg"
+          : "assets/images/instagram-reels-dark.svg",
       pageIndex == 3
           ? "assets/images/love_active_icon.svg"
           : "assets/images/love_icon.svg",
@@ -129,16 +145,34 @@ class _RootAppState extends State<RootApp> {
             const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(bottomItems.length, (index) {
-            return InkWell(
+          children: List.generate(
+            bottomItems.length,
+            (index) {
+              return InkWell(
                 onTap: () {
                   selectedTab(index);
                 },
-                child: SvgPicture.asset(
-                  bottomItems[index],
-                  width: 27,
-                ));
-          }),
+                child: index == 2
+                    ? Container(
+                        width: 27,
+                        height: 27,
+                        child: Image.asset(
+                            "assets/images/instagram-reels-dark.png"),
+                      )
+                    : index == 3
+                        ? Container(
+                            width: 27,
+                            height: 27,
+                            child:
+                                Image.asset("assets/images/instagram-shop.png"),
+                          )
+                        : SvgPicture.asset(
+                            bottomItems[index],
+                            width: 27,
+                          ),
+              );
+            },
+          ),
         ),
       ),
     );

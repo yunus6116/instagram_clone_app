@@ -10,10 +10,10 @@ class PostItem extends StatelessWidget {
   final String name;
   final String postImg;
   final String caption;
-  final isLoved;
+  final bool isLoved;
   final String likedBy;
   final String viewCount;
-  final String dayAgo;
+  final String timeAgo;
   const PostItem({
     Key key,
     this.profileImg,
@@ -22,7 +22,7 @@ class PostItem extends StatelessWidget {
     this.isLoved,
     this.likedBy,
     this.viewCount,
-    this.dayAgo,
+    this.timeAgo,
     this.caption,
   }) : super(key: key);
 
@@ -231,7 +231,7 @@ class PostItem extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 15, right: 15),
             child: Text(
-              "$dayAgo",
+              "$timeAgo",
               style: TextStyle(
                   color: white.withOpacity(0.5),
                   fontSize: 15,
