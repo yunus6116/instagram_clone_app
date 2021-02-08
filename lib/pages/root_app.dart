@@ -64,36 +64,36 @@ class _RootAppState extends State<RootApp> {
     if (pageIndex == 0) {
       return AppBar(
         backgroundColor: appBarColor,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Text(
-              "Instagram",
-              style: TextStyle(fontFamily: 'Billabong', fontSize: 35),
-            ),
-            Expanded(
-              child: Container(),
-            ),
-            SvgPicture.asset(
-              "assets/images/upload_icon.svg",
-              width: 30,
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            SvgPicture.asset(
-              "assets/images/love_icon.svg",
-              width: 30,
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            SvgPicture.asset(
-              "assets/images/message_icon.svg",
-              width: 30,
-            ),
-          ],
-        ),
+        // title: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //   children: <Widget>[
+        //     Text(
+        //       "Instagram",
+        //       style: TextStyle(fontFamily: 'Billabong', fontSize: 35),
+        //     ),
+        //     Expanded(
+        //       child: Container(),
+        //     ),
+        //     SvgPicture.asset(
+        //       "assets/images/upload_icon.svg",
+        //       width: 30,
+        //     ),
+        //     SizedBox(
+        //       width: 20,
+        //     ),
+        //     SvgPicture.asset(
+        //       "assets/images/love_icon.svg",
+        //       width: 30,
+        //     ),
+        //     SizedBox(
+        //       width: 20,
+        //     ),
+        //     SvgPicture.asset(
+        //       "assets/images/message_icon.svg",
+        //       width: 30,
+        //     ),
+        //   ],
+        // ),
       );
     } else if (pageIndex == 1) {
       return AppBar(
@@ -141,42 +141,38 @@ class _RootAppState extends State<RootApp> {
             const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(
-            bottomItems.length,
-            (index) {
-              return InkWell(
-                onTap: () {
-                  selectedTab(index);
-                },
-                child: index == 2
-                    ? Container(
-                        width: 27,
-                        height: 27,
-                        child: Image.asset(
-                            "assets/images/instagram-reels-dark.png"),
-                      )
-                    : index == 3
-                        ? Container(
-                            width: 27,
-                            height: 27,
-                            child:
-                                Image.asset("assets/images/instagram-shop.png"),
-                          )
-                        : SvgPicture.asset(
-                            bottomItems[index],
-                            width: 27,
-                          ),
-              );
-            },
-          ),
+          // children: List.generate(
+          //   bottomItems.length,
+          //   (index) {
+          //     return InkWell(
+          //       onTap: () {
+          //         setState(() {
+          //           pageIndex = index;
+          //         });
+          //       },
+          //       child: index == 2
+          //           ? Container(
+          //               width: 27,
+          //               height: 27,
+          //               child: Image.asset(
+          //                   "assets/images/instagram-reels-dark.png"),
+          //             )
+          //           : index == 3
+          //               ? Container(
+          //                   width: 27,
+          //                   height: 27,
+          //                   child:
+          //                       Image.asset("assets/images/instagram-shop.png"),
+          //                 )
+          //               : SvgPicture.asset(
+          //                   bottomItems[index],
+          //                   width: 27,
+          //                 ),
+          //     );
+          //   },
+          // ),
         ),
       ),
     );
-  }
-
-  selectedTab(index) {
-    setState(() {
-      pageIndex = index;
-    });
   }
 }

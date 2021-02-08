@@ -20,10 +20,13 @@ class _HomePageState extends State<HomePage> {
   Widget getBody() {
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SingleChildScrollView(
+          // stories burada gösterilecek ve horizontal scrool olacak.
+          /*SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Padding(
                   padding:
@@ -51,7 +54,9 @@ class _HomePageState extends State<HomePage> {
                                   width: 19,
                                   height: 19,
                                   decoration: BoxDecoration(
-                                      shape: BoxShape.circle, color: white),
+                                    shape: BoxShape.circle,
+                                    color: white,
+                                  ),
                                   child: Icon(
                                     Icons.add_circle,
                                     color: buttonFollowColor,
@@ -76,34 +81,36 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Row(
-                  children: List.generate(stories.length, (index) {
-                    return StoryItem(
-                      img: stories[index]['img'],
-                      name: stories[index]['name'],
-                    );
-                  }),
-                ),
+                // Storyler'i story_json dosyasıdan çek ve yan yana göster.
+                // Row(
+                //   children: List.generate(stories.length, (index) {
+                //     return StoryItem(
+                //       img: stories[index]['img'],
+                //       name: stories[index]['name'],
+                //     );
+                //   }),
+                // ),
               ],
             ),
-          ),
-          Divider(
-            color: white.withOpacity(0.3),
-          ),
-          Column(
-            children: List.generate(posts.length, (index) {
-              return PostItem(
-                postImg: posts[index]['postImg'],
-                profileImg: posts[index]['profileImg'],
-                name: posts[index]['name'],
-                caption: posts[index]['caption'],
-                isLoved: posts[index]['isLoved'],
-                viewCount: posts[index]['commentCount'],
-                likedBy: posts[index]['likedBy'],
-                timeAgo: posts[index]['timeAgo'],
-              );
-            }),
-          )
+          ), */
+          // Divider(
+          //   color: white.withOpacity(0.3),
+          // ),
+          // Postları posts_json dosyasından çek ve alt alta göster.
+          // Column(
+          //   children: List.generate(posts.length, (index) {
+          //     return PostItem(
+          //       postImg: posts[index]['postImg'],
+          //       profileImg: posts[index]['profileImg'],
+          //       name: posts[index]['name'],
+          //       caption: posts[index]['caption'],
+          //       isLoved: posts[index]['isLoved'],
+          //       viewCount: posts[index]['commentCount'],
+          //       likedBy: posts[index]['likedBy'],
+          //       timeAgo: posts[index]['timeAgo'],
+          //     );
+          //   }),
+          // )
         ],
       ),
     );
