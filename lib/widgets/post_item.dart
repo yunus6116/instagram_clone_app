@@ -44,10 +44,10 @@ class PostItem extends StatelessWidget {
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage(profileImg),
-                              fit: BoxFit.cover)),
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: NetworkImage(profileImg), fit: BoxFit.cover),
+                      ),
                     ),
                     SizedBox(
                       width: 15,
@@ -71,12 +71,7 @@ class PostItem extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
-          Container(
-            height: 400,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(postImg), fit: BoxFit.cover)),
-          ),
+          postImage(),
           SizedBox(
             height: 10,
           ),
@@ -172,61 +167,7 @@ class PostItem extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
-          Padding(
-              padding: EdgeInsets.only(left: 15, right: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Container(
-                        width: 30,
-                        height: 30,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: NetworkImage(
-                                  "https://media-exp1.licdn.com/dms/image/C4D03AQFQSFA3m8xLfQ/profile-displayphoto-shrink_800_800/0/1583423625748?e=1618444800&v=beta&t=tFLAmnv8fGQbo1rnc4yeBzBawFeWVEso1GytTjqZFIQ",
-                                ),
-                                fit: BoxFit.cover)),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        "Add a comment...",
-                        style: TextStyle(
-                            color: white.withOpacity(0.5),
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        "😂",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "😍",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        Icons.add_circle,
-                        color: white.withOpacity(0.5),
-                        size: 18,
-                      )
-                    ],
-                  )
-                ],
-              )),
+          rowBuild(),
           SizedBox(
             height: 12,
           ),
@@ -241,6 +182,74 @@ class PostItem extends StatelessWidget {
             ),
           )
         ],
+      ),
+    );
+  }
+
+  Padding rowBuild() {
+    return Padding(
+      padding: EdgeInsets.only(left: 15, right: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Container(
+                width: 30,
+                height: 30,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: NetworkImage(
+                          "https://media-exp1.licdn.com/dms/image/C4D03AQFQSFA3m8xLfQ/profile-displayphoto-shrink_800_800/0/1583423625748?e=1618444800&v=beta&t=tFLAmnv8fGQbo1rnc4yeBzBawFeWVEso1GytTjqZFIQ",
+                        ),
+                        fit: BoxFit.cover)),
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              Text(
+                "Add a comment...",
+                style: TextStyle(
+                    color: white.withOpacity(0.5),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Text(
+                "😂",
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "😍",
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.add_circle,
+                color: white.withOpacity(0.5),
+                size: 18,
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget postImage() {
+    return Container(
+      height: 400,
+      decoration: BoxDecoration(
+        image: DecorationImage(image: NetworkImage(postImg), fit: BoxFit.cover),
       ),
     );
   }

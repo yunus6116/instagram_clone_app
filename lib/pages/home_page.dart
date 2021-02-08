@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           // stories burada gösterilecek ve horizontal scrool olacak.
-          /*SingleChildScrollView(
+          SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -42,10 +42,11 @@ class _HomePageState extends State<HomePage> {
                               width: 65,
                               height: 65,
                               decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                      image: NetworkImage(profile),
-                                      fit: BoxFit.cover)),
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: NetworkImage(profile),
+                                    fit: BoxFit.cover),
+                              ),
                             ),
                             Positioned(
                                 bottom: 0,
@@ -82,35 +83,35 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 // Storyler'i story_json dosyasıdan çek ve yan yana göster.
-                // Row(
-                //   children: List.generate(stories.length, (index) {
-                //     return StoryItem(
-                //       img: stories[index]['img'],
-                //       name: stories[index]['name'],
-                //     );
-                //   }),
-                // ),
+                Row(
+                  children: List.generate(stories.length, (index) {
+                    return StoryItem(
+                      img: stories[index]['img'],
+                      name: stories[index]['name'],
+                    );
+                  }),
+                ),
               ],
             ),
-          ), */
-          // Divider(
-          //   color: white.withOpacity(0.3),
-          // ),
+          ),
+          Divider(
+            color: white.withOpacity(0.3),
+          ),
           // Postları posts_json dosyasından çek ve alt alta göster.
-          // Column(
-          //   children: List.generate(posts.length, (index) {
-          //     return PostItem(
-          //       postImg: posts[index]['postImg'],
-          //       profileImg: posts[index]['profileImg'],
-          //       name: posts[index]['name'],
-          //       caption: posts[index]['caption'],
-          //       isLoved: posts[index]['isLoved'],
-          //       viewCount: posts[index]['commentCount'],
-          //       likedBy: posts[index]['likedBy'],
-          //       timeAgo: posts[index]['timeAgo'],
-          //     );
-          //   }),
-          // )
+          Column(
+            children: List.generate(posts.length, (index) {
+              return PostItem(
+                postImg: posts[index]['postImg'],
+                profileImg: posts[index]['profileImg'],
+                name: posts[index]['name'],
+                caption: posts[index]['caption'],
+                isLoved: posts[index]['isLoved'],
+                viewCount: posts[index]['commentCount'],
+                likedBy: posts[index]['likedBy'],
+                timeAgo: posts[index]['timeAgo'],
+              );
+            }),
+          )
         ],
       ),
     );
